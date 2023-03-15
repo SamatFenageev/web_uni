@@ -1,0 +1,83 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+}
+img{
+	width: 150px;
+	height: 150px;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка */
+header {
+  background-color: #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+header nav {
+  margin-top: 10px;
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+header nav li {
+  margin-right: 20px;
+}
+header nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Главный контент */
+main {
+  margin-bottom: 20px;
+}
+main h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+main ul {
+  list-style: none;
+  padding: 0;
+}
+main li {
+  margin-bottom: 20px;
+}
+main h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+main p {
+  margin: 0;
+}
+
+/* Футер */
+footer {
+  background-color: #eee;
+  padding: 20px;
+}
+footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
