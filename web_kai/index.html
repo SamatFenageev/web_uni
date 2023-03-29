@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Доска объявлений</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
+<html>
+  <head>
+    <title>Доска объявлений</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
       <h1>Доска объявлений</h1>
       <nav>
         <ul>
@@ -18,30 +15,48 @@
         </ul>
       </nav>
     </div>
-  </header>
-  <main>
-    <div class="container">
-      <h2>Новые объявления</h2>
-      <ul>
-        <li>
-          <h3>Продается автомобиль</h3>
-          <img src="forDiscord.jpg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris mauris, ultricies sit amet ipsum et, venenatis vulputate massa. Duis ut augue at nulla iaculis vestibulum. Aliquam varius metus id leo bibendum, id mollis elit convallis. Sed tristique, mi at euismod accumsan, augue tellus euismod augue, a vulputate tellus augue sit amet ex. Praesent eget rutrum elit, vitae scelerisque orci. </p>
-          <a href="#">Подробнее</a>
-        </li>
-        <li>
-          <h3>Сдается квартира</h3>
-          <img src="forDiscord.jpg">
-          <p>Phasellus vel risus turpis. Mauris commodo lectus ac lacus commodo ultricies. Sed sit amet orci nisi. Donec elementum commodo ipsum vel placerat. Suspendisse ornare orci quis nulla commodo ullamcorper. Pellentesque ac libero bibendum, bibendum velit sed, ultrices dolor. Integer malesuada lacinia risus, sed lobortis tellus lacinia nec. Nunc id tellus lectus. </p>
-          <a href="#">Подробнее</a>
-        </li>
-      </ul>
-    </div>
-  </main>
-  <footer>
-    <div class="container">
+    </header>
+    <main>
+      <div class="tabs">
+        <button class="tablinks active" onclick="openTab(event, 'new')">Самые новые объявления</button>
+        <button class="tablinks" onclick="openTab(event, 'old')">Самые старые объявления</button>
+        <button class="tablinks" onclick="openTab(event, 'add')">Добавить объявление</button>
+      </div>
+      <div id="new" class="tabcontent active">
+        <ul>
+          <li>Объявление 1 (самое новое)</li>
+          <li>Объявление 2</li>
+          <li>Объявление 3 (самое старое)</li>
+        </ul>
+      </div>
+      <div id="old" class="tabcontent">
+        <ul>
+          <li>Объявление 3 (самое старое)</li>
+          <li>Объявление 2</li>
+          <li>Объявление 1 (самое новое)</li>
+        </ul>
+      </div>
+      <div id="add" class="tabcontent">
+        <form>
+          <label for="title">Заголовок:</label>
+          <input type="text" id="title" name="title"><br>
+          <label for="description">Описание:</label>
+          <textarea id="description" name="description"></textarea><br>
+          <button type="submit">Добавить объявление</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>© 2023 Доска объявлений</p>
     </div>
-  </footer>
-</body>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
