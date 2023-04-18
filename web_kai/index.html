@@ -3,6 +3,7 @@
   <head>
     <title>Доска объявлений</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -18,32 +19,12 @@
     </header>
     <main>
       <div class="tabs">
-        <button class="tablinks active" onclick="openTab(event, 'new')">Самые новые объявления</button>
-        <button class="tablinks" onclick="openTab(event, 'old')">Самые старые объявления</button>
-        <button class="tablinks" onclick="openTab(event, 'add')">Добавить объявление</button>
+        <a href=""><span class="tablinks">Самые новые объявления</span></a>
+        <a href=""><span class="tablinks">Самые старые объявления</span></a>
+        <a href=""><span class="tablinks">Добавить объявление</span></a>
       </div>
-      <div id="new" class="tabcontent active">
-        <ul>
-          <li>Объявление 1 (самое новое)</li>
-          <li>Объявление 2</li>
-          <li>Объявление 3 (самое старое)</li>
-        </ul>
-      </div>
-      <div id="old" class="tabcontent">
-        <ul>
-          <li>Объявление 3 (самое старое)</li>
-          <li>Объявление 2</li>
-          <li>Объявление 1 (самое новое)</li>
-        </ul>
-      </div>
-      <div id="add" class="tabcontent">
-        <form>
-          <label for="title">Заголовок:</label>
-          <input type="text" id="title" name="title"><br>
-          <label for="description">Описание:</label>
-          <textarea id="description" name="description"></textarea><br>
-          <button type="submit">Добавить объявление</button>
-        </form>
+      <div class="tabcontent active">
+
       </div>
     </main>
     <footer>

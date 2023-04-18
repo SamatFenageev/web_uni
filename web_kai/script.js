@@ -1,44 +1,57 @@
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-}
+var main = function () {
+  "use strict";
+  var ads = [
+    "объявление 1",
+    "объявление 2",
+    "объявление 3",
+  ];
+  $(".tabs a span").toArray().forEach(function (element) {
+    $(element).on("click", function () {
+      var $element = $(element);
+      $(".tabs a span").removeClass("active");
+      $element.addClass("active");
+      var $content;
+      if($element.parent().is(":nth-child(1)")){
+        $content = $("<ul>");
+        for (var i = ads.length - 1; i >= 0; i--) {
+          $content.append($("<li>").text(ads[i]));
+        }
+      }
+      else if($element.parent().is(":nth-child(2)")){
+        $content = $("<ul>");
+        ads.forEach(function(ad){
+          $content.append($("<li>").text(ad));
+        });
+      }
+      else if($element.parent().is(":nth-child(3)")){
+        $content = $("<form>");
+        $content.append($("<label for='title'>").text('Заголовок'));
+        $content.append($("<input type='text' name='title'>"));
+        $content.append($("<button type='submit'>").text('Добавить объявление'));
+        $content.on("submit", function(event) {
+          event.preventDefault();
+          var title = $content.find("input[name='title']").val();
+          ads.push(title);
+          $("main .tabcontent").empty();
+          $(".tabs a span").removeClass("active");
+          $(".tabs a:first-child span").trigger("click");
+        });
+      }
+      $("main .tabcontent").empty().append($content);
+      return false;
+    });
+  });
+};
+$(document).ready(main);
 
-// Получаем форму и список объявлений на каждой вкладке
-const form = document.querySelector('#add form');
-const newTabList = document.querySelector('#new ul');
-const oldTabList = document.querySelector('#old ul');
 
-// Обработчик события на отправку формы
-form.addEventListener('submit', (event) => {
-  // Отменяем стандартное поведение формы (отправку на сервер)
-  event.preventDefault();
 
-  // Получаем значения полей формы
-  const title = document.querySelector('#title').value;
-  const description = document.querySelector('#description').value;
-
-  // Создаем новый элемент списка объявлений
-  const newListItem1 = document.createElement('li');
-  newListItem1.innerText = title + ': ' + description;
-  const newListItem2 = document.createElement('li');
-  newListItem2.innerText = title + ': ' + description;
-
-  // Добавляем новый элемент в список на каждой вкладке
-  newTabList.insertBefore(newListItem1, newTabList.firstChild);
-  oldTabList.appendChild(newListItem2);
-  
-  
-
-  // Очищаем поля формы
-  document.querySelector('#title').value = '';
-  document.querySelector('#description').value = '';
-});
+/*
+<form>
+          <label for="title">Заголовок:</label>
+          <input type="text" id="title" name="title"><br>
+          <label for="description">Описание:</label>
+          <textarea id="description" name="description"></textarea><br>
+          <button type="submit">Добавить объявление</button>
+        </form>
+*/
