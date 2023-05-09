@@ -11,25 +11,29 @@
       <h1>Доска объявлений</h1>
       <nav>
         <ul>
-          <li><a href="#">Главная</a></li>
+          <li><a href="index.html">Главная</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="pictureShow.html">Поддержка</a></li>
+          <a href="pictureShow.html">Поддержка</a>
         </ul>
       </nav>
     </div>
     </header>
-    <main>
-      <div class="tabs">
-        <a href=""><span class="tablinks">Самые новые объявления</span></a>
-        <a href=""><span class="tablinks">Самые старые объявления</span></a>
-        <a href=""><span class="tablinks">Теги</span></a>
-        <a href=""><span class="tablinks">Добавить объявление</span></a>
-      </div>
-      <div class="tabcontent active">
-
-      </div>
-    </main>
-    <footer>
+		
+		<main class="mainTheme">
+			<div class="showPictures">
+				<span>Критерий поиска:</span>
+				<br class="clear" />
+				<input id="fieldForTagsOfOicture"><br class="clear" /><button class="buttonStyle">Найти</button>
+				<br class="clear" />
+				<span>Результат:</span>
+				<br class="clear" />
+				<div class="photos">
+					<img id="newPicture" />
+				</div>
+			</div>
+		</main>
+		
+		<footer>
       <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -40,6 +44,6 @@
       <p>© 2023 Доска объявлений</p>
     </div>
     </footer>
-    <script src="script1.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -77,3 +77,71 @@ footer {
   padding: 0 20px;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  max-width: 30%;
+
+}
+button{
+  margin-top: 10px;
+  max-width: 10%;
+}
+
+label{
+  margin-top: 10px; 
+}
+
+ul{
+  list-style: none;
+}
+
+img{
+  max-width: 200px;
+  max-height: 200;
+  border-radius: 10px;
+}
+
+li{
+  margin: 10px;
+}
+
+.float-right{
+  float: right;
+}
+
+.hover {
+  background: #0077FF;
+  color: #fff;
+}
+
+.inputStyleDescription {
+  border-radius: 3px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 363px;
+}
+
+.inputStyleTags {
+  border-radius: 3px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 363px;
+}
+
+.buttonStyle {
+  margin-bottom: 10px;
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  margin-left: 279px;
+  background: #fff;
+  border-radius: 5px;
+}
