@@ -24,11 +24,9 @@ function organizeByTags(adObjects) {
 }
 
 
-
-
 var main = function (adObjects) {
   "use strict";
-
+  
   var ads = adObjects;
   $(".tabs a span").toArray().forEach(function (element) {
     $(element).on("click", function () {
@@ -105,7 +103,7 @@ var main = function (adObjects) {
         $content.append($("<button type='submit'>").text('Добавить объявление'));
         
         $content.on("submit", function(event) {
-          event.preventDefault();
+          //event.preventDefault();
           
           var newAd = {
             title: $("[name='title']").val(),
@@ -116,30 +114,23 @@ var main = function (adObjects) {
             image: $("[name='image']").val(),
             tags: $("[name='tags']").val().split(",").map(function(tag) { return tag.trim(); })
           };
-          ads.push(newAd);
+          console.log('hello mir');
           
-          //ads = organizeByTags(result);
+          $.post("ads", newAd, function (result) {
+            console.log(result);
+            
+            ads.push(newAd);
+
+            organizedByTag = organizeByTags(ads);
+            
+            /*$("#description").val("");
+            $("#tags").val("");*/
+          });
+
           $("main .tabcontent").empty();
           $(".tabs a span").removeClass("active");
           $(".tabs a:first-child span").trigger("click");
-          /*$.ajax({
-          type: "POST",
-          url: "ads.json",
-          data: JSON.stringify(newAd),
-          dataType: "json",
-          contentType: "application/json",
-          success: function(data) {
-            ads.push(newAd);
-            $("main .tabcontent").empty();
-            $(".tabs a span").removeClass("active");
-            $(".tabs a:first-child span").trigger("click");
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-          }
-        });
-        
-        return false;*/
+          
         });
       }
       $("main .tabcontent").empty().append($content);
