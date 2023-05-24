@@ -38,39 +38,3 @@ app.post("/users", UsersController.create);
 app.get("/users/:username", UsersController.show);
 app.put("/users/:username", UsersController.update);
 app.delete("/users/:username", UsersController.destroy);
-
-/* --------------------------------------------------------------------------------------------------
-
-let ToDo = mongoose.model('ToDo', new Schema({ description: String, tags: [ String ] })); // Создаем модель данных
-
-app.get("/todos.json", async (req, res) => { // Настраиваем маршрутизатор для GET-запроса
-		await ToDo.find() // Выбираем все объекты модели данных
-				.then((toDos) => { // Успешная читка
-					res.json(toDos);
-				})
-				.catch((err) => { // Ошибка читки
-					console.log(err);
-				});
-});
-
-app.post("/todos", async (req, res) => { // Настроиваем маршрутизатор для POST-запроса
-	console.log(req.body);
-	let newToDo = new ToDo({"description":req.body.description, "tags":req.body.tags});
-	
-	const newToDosDoc = await newToDo.save() // Сохраняем (добавляем) новые данные в модель данных
-			.then(async (err, result) => { // Данные успешно сохранены
-				await ToDo.find()
-					.then(async (err, result) => { // Успешная читка
-						res.json(result);
-					})
-					.catch(async (err, result) => { // Ошибка читки
-						res.send('ERROR');
-					});
-			})
-			.catch(async (err, result) => { // Ошибка сохранения
-				console.log(err);
-				res.send('ERROR');
-			});
-});
-
--------------------------------------------------------------------------------------------------- */
